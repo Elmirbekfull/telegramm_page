@@ -17,19 +17,21 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         title: const Text('Настройки'),
       ),
-      body: Container(
-        width: double.infinity,
-        child: const Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            _UserInfo(),
-            SizedBox(height: 30,),
-            _SecondWidget(),
-            SizedBox(height: 15,),
-            _ThirdWidget(),
-            SizedBox(height: 15,),
-            FourthWidget()
-          ],
+      body: SingleChildScrollView(
+        child: Container(
+          width: double.infinity,
+          child: const Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              _UserInfo(),
+              SizedBox(height: 30,),
+              _SecondWidget(),
+              SizedBox(height: 15,),
+              _ThirdWidget(),
+              SizedBox(height: 15,),
+              FourthWidget()
+            ],
+          ),
         ),
       ),
     );
@@ -51,9 +53,7 @@ class _SecondWidget extends StatelessWidget {
               child: Row(children: [
                 Icon(Icons.bookmark , color: Color.fromARGB(255, 31, 71, 214), ),
                 SizedBox(width: 15,),
-                Expanded(child: Text("Избранное", style: TextStyle(
-                  fontSize: null
-                ),),), // добавление chervon под конец
+                Expanded(child: Text("Избранное"),), // добавление chervon под конец
                    Icon(Icons.chevron_right_rounded),
               ],
               ),
@@ -156,7 +156,6 @@ class FourthWidget extends StatelessWidget {
             Expanded (child: Text("Добавить аккаунт", style: TextStyle(
               color: Colors.grey, 
               fontWeight: FontWeight.w600
-              
               ),),),
             Icon(Icons.chevron_right_rounded)
           ],),
